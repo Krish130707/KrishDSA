@@ -96,7 +96,7 @@ int main() {
 
     // Step 3: While loop menu for operations
     while (1) {
-        printf("\nMenu:\n");
+        printf("\n");
         printf("1. Insert at Any Index\n");
         printf("2. Delete at Any Index\n");
         printf("3. Display List\n");
