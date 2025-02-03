@@ -50,9 +50,15 @@ void display_list(struct Node* head) {
 }
 
 int main() {
-    int arr[] = {10, 20, 30, 40, 50}; // Input array
-    int n = sizeof(arr) / sizeof(arr[0]); // Number of elements in the array
+    int n; // Number of elements in the array
+    printf("Enter the size of array : ");
+    scanf("%d", &n);
+    int* arr = (int*)malloc(sizeof(n*sizeof(int)));
     struct Node* head = NULL;
+    for (int i = 0; i < n; i++) {
+    	printf("Ener element number %d : ",i+1);
+        scanf("%d", &arr[i]);
+    }
 
     // Copy elements of the array to the linked list
     for (int i = 0; i < n; i++) {
