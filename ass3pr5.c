@@ -33,8 +33,8 @@ struct Node* insert_at_end(struct Node* head, int data) {
 }
 
 // Function to convert the linked list into an array
-int* convert_to_array(struct Node* head, int* size) {
-    int* arr = (int*)malloc(sizeof(int) * 100); // Allocate memory for the array (assuming max size of 100)
+int* convert_to_array(struct Node* head, int size) {
+    int* arr = (int*)malloc(sizeof(int) * size); // Allocate memory for the array (assuming max size of 100)
     int index = 0;
 
     struct Node* temp = head;
@@ -43,7 +43,7 @@ int* convert_to_array(struct Node* head, int* size) {
         temp = temp->next; // Move to the next node
     }
     
-    *size = index; // Update the size of the array
+    
     return arr; // Return the array
 }
 
@@ -73,14 +73,13 @@ int main() {
 
     // Convert the linked list to an array
     int size;
-    int* arr = convert_to_array(head, &size);
+    int* arr = convert_to_array(head, n);
 
     // Display the resulting array
     printf("\nLinked List converted to Array:\n");
-    display_array(arr, size);
+    display_array(arr, n);
 
-    // Free the allocated memory for the array
-    free(arr);
+    
 
     return 0;
 }
